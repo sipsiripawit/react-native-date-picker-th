@@ -117,20 +117,35 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
     }
 
     private Calendar getClosestExistingDateInPast(){
+//        SimpleDateFormat dateFormat = getDateFormat();
+//        dateFormat.setLenient(false); // disallow parsing invalid dates
+//
+//        int maxDaysInPastToCheck = 10;
+//        for (int i = 0; i < maxDaysInPastToCheck; i++){
+//            String toParse = wheels.getDateTimeString();
+//            Toast.makeText(rootView.getContext(), "toParse : " + toParse, Toast.LENGTH_SHORT).show();
+//            LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat()).minusYears(543);
+//            Instant instant = dateTime.atZone(ZoneId.systemDefault()).toInstant();
+//            Date dateInstant = Date.from(instant);
+//            Calendar calendar = Calendar.getInstance();
+//            calendar.setTime(dateInstant);
+//            calendar.add(Calendar.YEAR, 543);
+//            return calendar;
+//        }
+//        return null;
         SimpleDateFormat dateFormat = getDateFormat();
         dateFormat.setLenient(false); // disallow parsing invalid dates
 
         int maxDaysInPastToCheck = 10;
         for (int i = 0; i < maxDaysInPastToCheck; i++){
-            String toParse = wheels.getDateTimeString();
-            Toast.makeText(rootView.getContext(), "toParse : " + toParse, Toast.LENGTH_SHORT).show();
-            LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat()).minusYears(543);
-            Instant instant = dateTime.atZone(ZoneId.systemDefault()).toInstant();
-            Date dateInstant = Date.from(instant);
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(dateInstant);
-            calendar.add(Calendar.YEAR, 543);
-            return calendar;
+            try {
+                String toParse = wheels.getDateTimeString(i);
+                Calendar calendar = Calendar.getInstance(state.getTimeZone());
+                calendar.setTime(dateFormat.parse(toParse));
+                return calendar;
+            } catch (ParseException ignored) {
+                // continue checking if exception (which means invalid date)
+            }
         }
         return null;
     }
