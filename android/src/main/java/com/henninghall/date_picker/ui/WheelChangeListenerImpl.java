@@ -86,13 +86,13 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
         try {
             SimpleDateFormat dateFormat = getDateFormat();
             String toParse = wheels.getDateTimeString();
-            Toast.makeText(rootView.getContext(), "toParse : " + toParse, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(rootView.getContext(), "toParse : " + toParse, Toast.LENGTH_SHORT).show();
             LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat());
-            Toast.makeText(rootView.getContext(), "dateTime : " + dateTime, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(rootView.getContext(), "dateTime : " + dateTime, Toast.LENGTH_SHORT).show();
 
             dateFormat.setLenient(false); // disallow parsing invalid dates
             dateFormat.parse(dateTime.format(getDateTimeFormat()));
-            Toast.makeText(rootView.getContext(), "dateTime.format(getDateTimeFormat()) : " + dateTime.format(getDateTimeFormat()), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(rootView.getContext(), "dateTime.format(getDateTimeFormat()) : " + dateTime.format(getDateTimeFormat()), Toast.LENGTH_SHORT).show();
             return true;
         } catch (ParseException e) {
             return false;
@@ -103,17 +103,17 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
         SimpleDateFormat dateFormat = getDateFormat();
         String toParse = wheels.getDateTimeString();
         LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat());
-//        Toast.makeText(rootView.getContext(), "dateTime : " + dateTime, Toast.LENGTH_SHORT).show();
+        Toast.makeText(rootView.getContext(), "dateTime : " + dateTime, Toast.LENGTH_SHORT).show();
         Instant instant = dateTime.atZone(ZoneId.systemDefault()).toInstant();
         Date dateInstant = Date.from(instant);
-//        Toast.makeText(rootView.getContext(), "dateInstant : " + dateInstant, Toast.LENGTH_SHORT).show();
+        Toast.makeText(rootView.getContext(), "dateInstant : " + dateInstant, Toast.LENGTH_SHORT).show();
         Calendar date = Calendar.getInstance();
         date.setTime(dateInstant);
-//        Toast.makeText(rootView.getContext(), "date : " + date.getTime(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(rootView.getContext(), "date : " + date.getTime(), Toast.LENGTH_SHORT).show();
 //        TimeZone timeZone = state.getTimeZone();
 //        Calendar date = Calendar.getInstance(timeZone);
         dateFormat.setLenient(true); // allow parsing invalid dates
-        date.add(Calendar.YEAR, 543);
+//        date.add(Calendar.YEAR, 543);
 //        Toast.makeText(rootView.getContext(), "date add : " + date.getTime(), Toast.LENGTH_SHORT).show();
 //            date.setTime(dateFormat.parse(toParse));
         return date;
