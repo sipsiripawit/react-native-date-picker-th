@@ -1,6 +1,7 @@
 package com.henninghall.date_picker.ui;
 
 import android.view.View;
+import android.widget.Toast;
 
 import com.henninghall.date_picker.Emitter;
 import com.henninghall.date_picker.State;
@@ -69,6 +70,7 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
     private boolean dateExists(){
         SimpleDateFormat dateFormat = getDateFormat();
         String toParse = wheels.getDateTimeString();
+        Toast.makeText(rootView.getContext(), toParse, Toast.LENGTH_SHORT).show();
         try {
             dateFormat.setLenient(false); // disallow parsing invalid dates
             dateFormat.parse(toParse);
