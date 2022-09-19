@@ -147,7 +147,7 @@ public class Wheels {
         for (int i = 0; i < 3; i++) {
             if (i != 0) sb.append(" ");
             Wheel w = getOrderedVisibleWheels().get(i);
-            sb.append(w.getValue());
+            sb.append(w.getDisplayValue());
         }
         return sb.toString();
     }
