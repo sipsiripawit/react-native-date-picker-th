@@ -104,9 +104,12 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
         Date dateInstant = Date.from(instant);
         Calendar date = Calendar.getInstance();
         date.setTime(dateInstant);
+        Toast.makeText(rootView.getContext(), "date : " + date.getTime(), Toast.LENGTH_SHORT).show();
 //        TimeZone timeZone = state.getTimeZone();
 //        Calendar date = Calendar.getInstance(timeZone);
         dateFormat.setLenient(true); // allow parsing invalid dates
+        date.add(Calendar.YEAR, 543);
+        Toast.makeText(rootView.getContext(), "date add : " + date.getTime(), Toast.LENGTH_SHORT).show();
 //            date.setTime(dateFormat.parse(toParse));
         return date;
     }
