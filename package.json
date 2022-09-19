@@ -1,5 +1,5 @@
 {
-  "name": "react-native-date-picker-th",
+  "name": "react-native-date-picker",
   "version": "4.2.5",
   "description": "A datetime picker for React Native. In-modal or inlined. Supports Android and iOS.",
   "main": "src/index.js",
@@ -11,11 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:sipsiripawit/react-native-date-picker-th.git"
+    "url": "git@github.com:henninghall/react-native-date-picker.git"
   },
-  "author": "sipsiripawit",
+  "author": "henninghall",
   "license": "MIT",
-  "homepage": "https://github.com/sipsiripawit/react-native-date-picker-th",
+  "homepage": "https://github.com/henninghall/react-native-date-picker",
   "keywords": [
     "datepicker",
     "date-picker",
@@ -27,7 +27,7 @@
     "react native datetimepicker",
     "react native date time picker",
     "react-native",
-    "react-native-date-picker-th"
+    "react-native-date-picker"
   ],
   "dependencies": {
     "prop-types": "^15.8.1"

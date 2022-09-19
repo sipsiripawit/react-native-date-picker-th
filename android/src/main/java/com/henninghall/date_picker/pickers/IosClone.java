@@ -1,4 +1,4 @@
-package com.sipsiripawit.date_picker.pickers;
+package com.henninghall.date_picker.pickers;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,7 +11,7 @@ import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction;
 
 import cn.carbswang.android.numberpickerview.library.NumberPickerView;
 
-import com.sipsiripawit.date_picker.ui.Accessibility;
+import com.henninghall.date_picker.ui.Accessibility;
 
 
 public class IosClone extends NumberPickerView implements Picker {

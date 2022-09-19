@@ -1,4 +1,4 @@
-package com.sipsiripawit.date_picker.ui;
+package com.henninghall.date_picker.ui;
 
 import android.content.Context;
 import android.os.Build;
@@ -8,9 +8,9 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.accessibilityservice.AccessibilityServiceInfo;
 
-import com.sipsiripawit.date_picker.DatePickerPackage;
-import com.sipsiripawit.date_picker.Utils;
-import com.sipsiripawit.date_picker.pickers.Picker;
+import com.henninghall.date_picker.DatePickerPackage;
+import com.henninghall.date_picker.Utils;
+import com.henninghall.date_picker.pickers.Picker;
 
 import java.util.Locale;
 import java.util.List;

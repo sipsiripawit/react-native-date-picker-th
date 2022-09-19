@@ -1,5 +1,5 @@
 
-import com.sipsiripawit.date_picker.Utils;
+import com.henninghall.date_picker.Utils;
 
 import org.junit.Test;
 

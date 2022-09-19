@@ -1,16 +1,16 @@
-package com.sipsiripawit.date_picker.ui;
+package com.henninghall.date_picker.ui;
 
 import android.view.View;
 
-import com.sipsiripawit.date_picker.State;
-import com.sipsiripawit.date_picker.wheelFunctions.AddOnChangeListener;
-import com.sipsiripawit.date_picker.wheelFunctions.AnimateToDate;
-import com.sipsiripawit.date_picker.wheelFunctions.Refresh;
-import com.sipsiripawit.date_picker.wheelFunctions.SetDate;
-import com.sipsiripawit.date_picker.wheelFunctions.TextColor;
-import com.sipsiripawit.date_picker.wheelFunctions.UpdateVisibility;
-import com.sipsiripawit.date_picker.wheelFunctions.HorizontalPadding;
-import com.sipsiripawit.date_picker.wheels.Wheel;
+import com.henninghall.date_picker.State;
+import com.henninghall.date_picker.wheelFunctions.AddOnChangeListener;
+import com.henninghall.date_picker.wheelFunctions.AnimateToDate;
+import com.henninghall.date_picker.wheelFunctions.Refresh;
+import com.henninghall.date_picker.wheelFunctions.SetDate;
+import com.henninghall.date_picker.wheelFunctions.TextColor;
+import com.henninghall.date_picker.wheelFunctions.UpdateVisibility;
+import com.henninghall.date_picker.wheelFunctions.HorizontalPadding;
+import com.henninghall.date_picker.wheels.Wheel;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

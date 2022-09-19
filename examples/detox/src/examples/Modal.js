@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, View, Text } from 'react-native'
-import DatePicker from 'react-native-date-picker-th'
+import DatePicker from 'react-native-date-picker'
 
 export default class ModalExample extends React.Component {
   state = { date: new Date(), open: false }

@@ -1,7 +1,7 @@
-package com.sipsiripawit.date_picker.ui;
+package com.henninghall.date_picker.ui;
 
-import com.sipsiripawit.date_picker.pickers.Picker;
-import com.sipsiripawit.date_picker.wheels.Wheel;
+import com.henninghall.date_picker.pickers.Picker;
+import com.henninghall.date_picker.wheels.Wheel;
 
 public class WheelScroller {
 

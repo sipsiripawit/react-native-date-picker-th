@@ -1,4 +1,4 @@
-package com.sipsiripawit.date_picker;
+package com.henninghall.date_picker;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;

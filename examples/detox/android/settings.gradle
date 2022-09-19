@@ -1,5 +1,5 @@
 rootProject.name = 'DetoxRNExample'
-include ':react-native-date-picker-th'
-project(':react-native-date-picker-th').projectDir = new File(rootProject.projectDir, '../../../android')
+include ':react-native-date-picker'
+project(':react-native-date-picker').projectDir = new File(rootProject.projectDir, '../../../android')
 
 include ':app'

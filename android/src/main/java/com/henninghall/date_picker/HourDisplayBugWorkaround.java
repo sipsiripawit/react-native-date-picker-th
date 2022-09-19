@@ -1,6 +1,6 @@
-package com.sipsiripawit.date_picker;
+package com.henninghall.date_picker;
 
-import com.sipsiripawit.date_picker.models.Variant;
+import com.henninghall.date_picker.models.Variant;
 
 /**
  * This workaround prevents a bug existing in the NativeAndroid variant.
@@ -10,7 +10,7 @@ import com.sipsiripawit.date_picker.models.Variant;
  * use case.
  *
  * More info about the bug:
- * https://github.com/sipsiripawit/react-native-date-picker-th/issues/382
+ * https://github.com/henninghall/react-native-date-picker/issues/382
  */
 public class HourDisplayBugWorkaround {
 

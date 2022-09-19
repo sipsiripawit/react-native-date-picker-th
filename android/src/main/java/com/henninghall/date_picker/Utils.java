@@ -1,11 +1,11 @@
-package com.sipsiripawit.date_picker;
+package com.henninghall.date_picker;
 
 
 import android.text.format.DateFormat;
 import android.text.format.DateUtils;
 
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.sipsiripawit.date_picker.models.WheelType;
+import com.henninghall.date_picker.models.WheelType;
 
 import net.time4j.PrettyTime;
 

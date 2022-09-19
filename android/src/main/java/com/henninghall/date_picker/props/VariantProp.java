@@ -1,7 +1,7 @@
-package com.sipsiripawit.date_picker.props;
+package com.henninghall.date_picker.props;
 
 import com.facebook.react.bridge.Dynamic;
-import com.sipsiripawit.date_picker.models.Variant;
+import com.henninghall.date_picker.models.Variant;
 
 public class VariantProp extends Prop<Variant> {
     public static final String name = "androidVariant";

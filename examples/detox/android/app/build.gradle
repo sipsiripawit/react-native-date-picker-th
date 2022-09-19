@@ -70,7 +70,7 @@ android {
 }
 
 dependencies {
-    implementation project(':react-native-date-picker-th')
+    implementation project(':react-native-date-picker')
     implementation 'com.android.support:appcompat-v7:28.0.0'
 
     // noinspection GradleDynamicVersion

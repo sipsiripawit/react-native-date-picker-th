@@ -1,12 +1,12 @@
-package com.sipsiripawit.date_picker.ui;
+package com.henninghall.date_picker.ui;
 
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.sipsiripawit.date_picker.R;
-import com.sipsiripawit.date_picker.State;
+import com.henninghall.date_picker.R;
+import com.henninghall.date_picker.State;
 
 public class FadingOverlay {
 

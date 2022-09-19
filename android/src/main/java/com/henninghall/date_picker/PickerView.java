@@ -1,4 +1,4 @@
-package com.sipsiripawit.date_picker;
+package com.henninghall.date_picker;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -6,21 +6,21 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.facebook.react.bridge.Dynamic;
-import com.sipsiripawit.date_picker.props.DividerHeightProp;
-import com.sipsiripawit.date_picker.props.Is24hourSourceProp;
-import com.sipsiripawit.date_picker.props.MaximumDateProp;
-import com.sipsiripawit.date_picker.props.MinimumDateProp;
-import com.sipsiripawit.date_picker.props.MinuteIntervalProp;
-import com.sipsiripawit.date_picker.props.UtcProp;
-import com.sipsiripawit.date_picker.props.VariantProp;
-import com.sipsiripawit.date_picker.props.DateProp;
-import com.sipsiripawit.date_picker.props.FadeToColorProp;
-import com.sipsiripawit.date_picker.props.HeightProp;
-import com.sipsiripawit.date_picker.props.LocaleProp;
-import com.sipsiripawit.date_picker.props.ModeProp;
-import com.sipsiripawit.date_picker.props.TextColorProp;
-import com.sipsiripawit.date_picker.ui.UIManager;
-import com.sipsiripawit.date_picker.ui.Accessibility;
+import com.henninghall.date_picker.props.DividerHeightProp;
+import com.henninghall.date_picker.props.Is24hourSourceProp;
+import com.henninghall.date_picker.props.MaximumDateProp;
+import com.henninghall.date_picker.props.MinimumDateProp;
+import com.henninghall.date_picker.props.MinuteIntervalProp;
+import com.henninghall.date_picker.props.UtcProp;
+import com.henninghall.date_picker.props.VariantProp;
+import com.henninghall.date_picker.props.DateProp;
+import com.henninghall.date_picker.props.FadeToColorProp;
+import com.henninghall.date_picker.props.HeightProp;
+import com.henninghall.date_picker.props.LocaleProp;
+import com.henninghall.date_picker.props.ModeProp;
+import com.henninghall.date_picker.props.TextColorProp;
+import com.henninghall.date_picker.ui.UIManager;
+import com.henninghall.date_picker.ui.Accessibility;
 
 import java.util.ArrayList;
 

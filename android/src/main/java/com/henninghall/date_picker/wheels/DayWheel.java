@@ -1,12 +1,12 @@
-package com.sipsiripawit.date_picker.wheels;
+package com.henninghall.date_picker.wheels;
 
 import android.graphics.Paint;
 
-import com.sipsiripawit.date_picker.LocaleUtils;
-import com.sipsiripawit.date_picker.pickers.Picker;
-import com.sipsiripawit.date_picker.State;
-import com.sipsiripawit.date_picker.models.Mode;
-import com.sipsiripawit.date_picker.Utils;
+import com.henninghall.date_picker.LocaleUtils;
+import com.henninghall.date_picker.pickers.Picker;
+import com.henninghall.date_picker.State;
+import com.henninghall.date_picker.models.Mode;
+import com.henninghall.date_picker.Utils;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

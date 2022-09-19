@@ -1,11 +1,11 @@
-package com.sipsiripawit.date_picker.wheels;
+package com.henninghall.date_picker.wheels;
 
 import android.graphics.Paint;
 
 import java.util.*;
-import com.sipsiripawit.date_picker.*;
-import com.sipsiripawit.date_picker.models.Mode;
-import com.sipsiripawit.date_picker.pickers.Picker;
+import com.henninghall.date_picker.*;
+import com.henninghall.date_picker.models.Mode;
+import com.henninghall.date_picker.pickers.Picker;
 
 public class DateWheel extends Wheel
 {

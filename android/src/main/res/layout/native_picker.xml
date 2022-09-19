@@ -15,7 +15,7 @@
         android:gravity="center"
         >
 
-        <com.sipsiripawit.date_picker.pickers.AndroidNative
+        <com.henninghall.date_picker.pickers.AndroidNative
             android:id="@+id/year"
             android:theme="@style/DatePickerTheme"
             style="@style/android_native"
@@ -24,7 +24,7 @@
             android:focusable="true"
             android:focusableInTouchMode="true" />
 
-        <com.sipsiripawit.date_picker.pickers.AndroidNative
+        <com.henninghall.date_picker.pickers.AndroidNative
             android:id="@+id/month"
             android:theme="@style/DatePickerTheme"
             style="@style/android_native"
@@ -33,7 +33,7 @@
             android:focusable="true"
             android:focusableInTouchMode="true" />
 
-        <com.sipsiripawit.date_picker.pickers.AndroidNative
+        <com.henninghall.date_picker.pickers.AndroidNative
             android:id="@+id/date"
             android:theme="@style/DatePickerTheme"
             style="@style/android_native_small"
@@ -42,7 +42,7 @@
             android:focusable="true"
             android:focusableInTouchMode="true" />
 
-        <com.sipsiripawit.date_picker.pickers.AndroidNative
+        <com.henninghall.date_picker.pickers.AndroidNative
             android:id="@+id/day"
             android:theme="@style/DatePickerTheme"
             style="@style/android_native"
@@ -51,7 +51,7 @@
             android:focusable="true"
             android:focusableInTouchMode="true" />
 
-        <com.sipsiripawit.date_picker.pickers.AndroidNative
+        <com.henninghall.date_picker.pickers.AndroidNative
             android:id="@+id/hour"
             android:theme="@style/DatePickerTheme"
             style="@style/android_native_small"
@@ -60,7 +60,7 @@
             android:focusable="true"
             android:focusableInTouchMode="true" />
 
-        <com.sipsiripawit.date_picker.pickers.AndroidNative
+        <com.henninghall.date_picker.pickers.AndroidNative
             android:id="@+id/minutes"
             android:theme="@style/DatePickerTheme"
             style="@style/android_native_small"
@@ -69,7 +69,7 @@
             android:focusable="true"
             android:focusableInTouchMode="true" />
 
-        <com.sipsiripawit.date_picker.pickers.AndroidNative
+        <com.henninghall.date_picker.pickers.AndroidNative
             android:id="@+id/ampm"
             android:theme="@style/DatePickerTheme"
             style="@style/android_native"
