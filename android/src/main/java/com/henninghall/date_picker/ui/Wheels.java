@@ -147,7 +147,9 @@ public class Wheels {
         for (int i = 0; i < 3; i++) {
             if (i != 0) sb.append(" ");
             Wheel w = getOrderedVisibleWheels().get(i);
-            sb.append(w.getDisplayValue());
+            if (i == 2) sb.append(Integer.parseInt(w.getDisplayValue()) - 543);
+            else sb.append(w.getDisplayValue());
+
         }
         return sb + " " + getTimeString();
 //        return getDateTimeString(0);
