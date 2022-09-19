@@ -1,7 +1,7 @@
-package com.henninghall.date_picker.props;
+package com.sipsiripawit.date_picker.props;
 
 import com.facebook.react.bridge.Dynamic;
-import com.henninghall.date_picker.models.Is24HourSource;
+import com.sipsiripawit.date_picker.models.Is24HourSource;
 
 public class Is24hourSourceProp extends Prop<Is24HourSource> {
     public static final String name = "is24hourSource";

@@ -1,7 +1,7 @@
-package com.henninghall.date_picker.props;
+package com.sipsiripawit.date_picker.props;
 
 import com.facebook.react.bridge.Dynamic;
-import com.henninghall.date_picker.models.Mode;
+import com.sipsiripawit.date_picker.models.Mode;
 
 public class MinuteIntervalProp extends Prop<Integer> {
     public static final String name = "minuteInterval";

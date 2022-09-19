@@ -1,9 +1,9 @@
-package com.henninghall.date_picker.props;
+package com.sipsiripawit.date_picker.props;
 
 import android.os.Build;
 
 import com.facebook.react.bridge.Dynamic;
-import com.henninghall.date_picker.LocaleUtils;
+import com.sipsiripawit.date_picker.LocaleUtils;
 
 
 import java.util.Locale;

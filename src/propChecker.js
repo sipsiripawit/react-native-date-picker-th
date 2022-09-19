@@ -10,7 +10,7 @@ class PropCheck {
   validate = (props) => {
     if (this.isInvalid(props)) {
       throw new Error(
-        `${this.errorText} Check usage of react-native-date-picker.`
+        `${this.errorText} Check usage of react-native-date-picker-th.`
       )
     }
   }

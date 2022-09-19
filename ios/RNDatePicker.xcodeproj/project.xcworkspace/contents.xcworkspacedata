@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/henninghall/Projects/react-native-date-picker/example/node_modules/react-native-date-picker-x/ios/DatePicker.xcodeproj">
+      location = "self:/Users/sipsiripawit/Projects/react-native-date-picker-th/example/node_modules/react-native-date-picker-th-x/ios/DatePicker.xcodeproj">
    </FileRef>
 </Workspace>

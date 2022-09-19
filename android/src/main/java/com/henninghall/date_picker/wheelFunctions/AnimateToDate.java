@@ -1,6 +1,6 @@
-package com.henninghall.date_picker.wheelFunctions;
+package com.sipsiripawit.date_picker.wheelFunctions;
 
-import com.henninghall.date_picker.wheels.Wheel;
+import com.sipsiripawit.date_picker.wheels.Wheel;
 
 import java.util.Calendar;
 import java.util.Date;

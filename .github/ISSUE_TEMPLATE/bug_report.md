@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Help us improve react-native-date-picker
+about: Help us improve react-native-date-picker-th
 title: ''
 labels: ''
 assignees: ''
@@ -32,4 +32,4 @@ export default class App extends Component {
 **Smartphone (please complete the following information):**
  - OS: [Android or iOS]
  - React Native version [e.g. 0.59.4]
- - react-native-date-picker version [e.g. 2.5.1]
+ - react-native-date-picker-th version [e.g. 2.5.1]

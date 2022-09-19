@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import DatePicker from 'react-native-date-picker'
+import DatePicker from 'react-native-date-picker-th'
 
 export default class MinimalExample extends Component {
   state = { date: new Date() }

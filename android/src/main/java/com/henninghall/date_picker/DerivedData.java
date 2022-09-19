@@ -1,19 +1,19 @@
-package com.henninghall.date_picker;
+package com.sipsiripawit.date_picker;
 
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.util.TimeUtils;
 
-import com.henninghall.date_picker.models.Mode;
-import com.henninghall.date_picker.models.Variant;
-import com.henninghall.date_picker.models.WheelType;
+import com.sipsiripawit.date_picker.models.Mode;
+import com.sipsiripawit.date_picker.models.Variant;
+import com.sipsiripawit.date_picker.models.WheelType;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 
-import static com.henninghall.date_picker.models.Is24HourSource.*;
+import static com.sipsiripawit.date_picker.models.Is24HourSource.*;
 
 public class DerivedData {
     private final State state;

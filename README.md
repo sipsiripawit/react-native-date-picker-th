@@ -1,4 +1,4 @@
-# React Native Date Picker [![npm](https://img.shields.io/npm/v/react-native-date-picker.svg)](https://www.npmjs.com/package/react-native-date-picker) [![Build status](https://img.shields.io/github/workflow/status/henninghall/react-native-date-picker/Android:%20build%20&%20test?label=tests)](https://github.com/henninghall/react-native-date-picker/actions) [![npm](https://img.shields.io/npm/dm/react-native-date-picker.svg)](https://www.npmjs.com/package/react-native-date-picker)
+# React Native Date Picker [![npm](https://img.shields.io/npm/v/react-native-date-picker-th.svg)](https://www.npmjs.com/package/react-native-date-picker-th) [![Build status](https://img.shields.io/github/workflow/status/sipsiripawit/react-native-date-picker-th/Android:%20build%20&%20test?label=tests)](https://github.com/sipsiripawit/react-native-date-picker-th/actions) [![npm](https://img.shields.io/npm/dm/react-native-date-picker-th.svg)](https://www.npmjs.com/package/react-native-date-picker-th)
 
 This is a React Native Date Picker with following main features:
 
@@ -52,11 +52,11 @@ If you're using expo, follow <a href="#using-expo">these steps instead.</a>
 1. Download package with npm or yarn
 
 ```
-npm install react-native-date-picker
+npm install react-native-date-picker-th
 ```
 
 ```
-yarn add react-native-date-picker
+yarn add react-native-date-picker-th
 ```
 
 2. Install pods
@@ -72,7 +72,7 @@ npx react-native run-android
 npx react-native run-ios
 ```
 
-If you're having troubles after following these steps, there might be a <a href="https://github.com/henninghall/react-native-date-picker/#user-content-linking">linking issue</a>.
+If you're having troubles after following these steps, there might be a <a href="https://github.com/sipsiripawit/react-native-date-picker-th/#user-content-linking">linking issue</a>.
 
 ## Using Expo
 
@@ -81,7 +81,7 @@ If you're having troubles after following these steps, there might be a <a href=
 1. Create the custom client:
 
 ```
-expo install react-native-date-picker expo-dev-client
+expo install react-native-date-picker-th expo-dev-client
 ```
 
 2. Build the app
@@ -99,14 +99,14 @@ Or in the cloud
 eas build -p all --profile development
 ```
 
-If you're having troubles, read the <a href="https://expo.canny.io/feature-requests/p/react-native-date-picker">pinned comment here. </a>
+If you're having troubles, read the <a href="https://expo.canny.io/feature-requests/p/react-native-date-picker-th">pinned comment here. </a>
 
 ## Example 1: Modal
 
 ```jsx
 import React, { useState } from 'react'
 import { Button } from 'react-native'
-import DatePicker from 'react-native-date-picker'
+import DatePicker from 'react-native-date-picker-th'
 
 export default () => {
   const [date, setDate] = useState(new Date())
@@ -136,7 +136,7 @@ export default () => {
 
 ```jsx
 import React, { useState } from 'react'
-import DatePicker from 'react-native-date-picker'
+import DatePicker from 'react-native-date-picker-th'
 
 export default () => {
   const [date, setDate] = useState(new Date())
@@ -154,7 +154,7 @@ export default () => {
 | `fadeToColor`             | Android picker is fading towards this background color. {color, 'none'}                                                                                                                                                                                                                                               |
 | `maximumDate`             | Maximum selectable date. <br/> Example: `new Date("2021-12-31")`                                                                                                                                                                                                                                                      |
 | `minimumDate`             | Minimum selectable date. <br/> Example: `new Date("2021-01-01")`                                                                                                                                                                                                                                                      |
-| `androidVariant`          | Choose from 2 android style variants. `"iosClone"`, `"nativeAndroid"`                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                                | <img src="docs/datetime-mode-android.png" alt="Datepicker ios clone variant" height="120px" /><img src="docs/react-native-date-picker-android.png" alt="Datepicker android native variant"/>                                                                                                       |
+| `androidVariant`          | Choose from 2 android style variants. `"iosClone"`, `"nativeAndroid"`                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                                | <img src="docs/datetime-mode-android.png" alt="Datepicker ios clone variant" height="120px" /><img src="docs/react-native-date-picker-th-android.png" alt="Datepicker android native variant"/>                                                                                                       |
 | `minuteInterval`          | The interval at which minutes can be selected.                                                                                                                                                                                                                                                                        | <img src="docs/minute-interval-ios.png" alt="Date picker minute interval IOS" height="120px" />                                                                                                                                                                | <img src="docs/minute-interval-android.png" alt="Date picker minute interval Android" height="120px" />                                                                                                                                                                                            |
 | `mode`                    | The date picker mode. `"datetime"`, `"date"`, `"time"`                                                                                                                                                                                                                                                                | <img src="docs/datetime-mode-ios.png" alt="React native date time picker" height="120px" /><img src="docs/date-mode-ios.png" alt="React native datepicker" height="120px" /><img src="docs/time-mode-ios.png" alt="React native time picker" height="120px" /> | <img src="docs/datetime-mode-android.png" alt="react native date time picker android" height="120px" /><img src="docs/date-mode-android.png" alt="react native datepicker android" height="120px" /><img src="docs/time-mode-android.png" alt="react native time picker android" height="120px" /> |
 | `locale`                  | The locale for the date picker. Changes language, date order and am/pm preferences. Value needs to be a <a title="react native datepicker locale id" href="https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html">Locale ID.</a> | <img src="docs/locale-ios.png" alt="React Native Date picker locale language ios" height="120px" />                                                                                                                                                            | <img src="docs/locale-android.png" alt="React Native Date picker locale language android" height="120px" />                                                                                                                                                                                        |
@@ -199,7 +199,7 @@ To change the confirm and cancel button colors. Open `styles.xml` and place this
 
 ### Font size
 
-To change the font size on Android `nativeAndroid` variant. Open `styles.xml` and place this code right above the `</resources>`. The font size is not possible to change in iOS out of the box, but there are some [iOS workarounds](https://github.com/henninghall/react-native-date-picker/discussions/171).
+To change the font size on Android `nativeAndroid` variant. Open `styles.xml` and place this code right above the `</resources>`. The font size is not possible to change in iOS out of the box, but there are some [iOS workarounds](https://github.com/sipsiripawit/react-native-date-picker-th/discussions/171).
 
 ```xml
 <style name="DatePickerTheme" parent="DatePickerBaseTheme">
@@ -209,7 +209,7 @@ To change the font size on Android `nativeAndroid` variant. Open `styles.xml` an
 
 ## Linking
 
-This package supports automatic linking. Usually, the only thing you need to do is to install the package, the cocoapods dependencies (as described above). Then rebuild the project by running `react-native run-ios`, `react-native run-android` or start the build from within Xcode/Android Studio. If you're running a React Native version below 0.60 or your setup is having issues with automatic linking, you can run `npx react-native link react-native-date-picker` and rebuild. In some occations you'll have to manually link the package. Instructions in <a href="https://github.com/henninghall/react-native-date-picker/issues/40">this issue</a>.
+This package supports automatic linking. Usually, the only thing you need to do is to install the package, the cocoapods dependencies (as described above). Then rebuild the project by running `react-native run-ios`, `react-native run-android` or start the build from within Xcode/Android Studio. If you're running a React Native version below 0.60 or your setup is having issues with automatic linking, you can run `npx react-native link react-native-date-picker-th` and rebuild. In some occations you'll have to manually link the package. Instructions in <a href="https://github.com/sipsiripawit/react-native-date-picker-th/issues/40">this issue</a>.
 
 ## FAQ
 
@@ -245,9 +245,9 @@ On Android there are two design variants to choose from:
 <table>
 <tr><td align="center"><b>iOS clone</b></td><td align="center"><b>Native Android</b></td>  
   </tr><tr><td align="center">
- <img src="docs/react-native-date-picker-android.gif" alt="date time picker" height="150px" />
+ <img src="docs/react-native-date-picker-th-android.gif" alt="date time picker" height="150px" />
 </td><td align="center">
- <img src="docs/react-native-date-picker-android-native.gif" alt="date time picker" height="150px" />
+ <img src="docs/react-native-date-picker-th-android-native.gif" alt="date time picker" height="150px" />
 </td></tr>
 
 <tr><td>The so called "iOS clone" looks and works similar to the ios version. It shows normally 5 lines of dates. It is enabled by default.</td><td>

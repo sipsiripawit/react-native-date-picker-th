@@ -1,4 +1,4 @@
-package com.henninghall.date_picker.pickers;
+package com.sipsiripawit.date_picker.pickers;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 
-import com.henninghall.date_picker.Utils;
+import com.sipsiripawit.date_picker.Utils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

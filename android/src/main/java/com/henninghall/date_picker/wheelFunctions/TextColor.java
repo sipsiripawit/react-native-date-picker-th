@@ -1,8 +1,8 @@
-package com.henninghall.date_picker.wheelFunctions;
+package com.sipsiripawit.date_picker.wheelFunctions;
 
 import android.graphics.Color;
 
-import com.henninghall.date_picker.wheels.Wheel;
+import com.sipsiripawit.date_picker.wheels.Wheel;
 
 public class TextColor implements WheelFunction {
 
