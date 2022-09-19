@@ -7,6 +7,9 @@ import com.henninghall.date_picker.pickers.Picker;
 import com.henninghall.date_picker.State;
 import com.henninghall.date_picker.models.Mode;
 
+import java.time.ZoneId;
+import java.time.chrono.ThaiBuddhistDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -30,11 +33,11 @@ public class YearWheel extends Wheel
         final int endYear = getEndYear();
         int max = endYear - startYear;
 
-        cal.set(Calendar.YEAR, startYear);
+        ThaiBuddhistDate tbd = ThaiBuddhistDate.of(startYear, 1, 1);
 
         for (int i = 0; i <= max; ++i) {
-            values.add(getLocaleString(cal));
-            cal.add(Calendar.YEAR, 1);
+            values.add(getLocaleString(tbd));
+            tbd = tbd.plus(1, ChronoUnit.YEARS);
         }
 
         return values;

@@ -8,6 +8,8 @@ import com.henninghall.date_picker.pickers.Picker;
 import com.henninghall.date_picker.State;
 
 import java.text.SimpleDateFormat;
+import java.time.chrono.ThaiBuddhistDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
@@ -116,12 +118,24 @@ public abstract class Wheel {
         return new SimpleDateFormat(this.getFormatPattern(), locale);
     }
 
+    private DateTimeFormatter getFormat() {
+        return DateTimeFormatter.ofPattern(this.getFormatPattern());
+    }
+
     String getLocaleString(Calendar cal) {
         return getString(cal, this.state.getLocale());
     }
 
+    String getLocaleString(ThaiBuddhistDate tbd) {
+        return getString(tbd);
+    }
+
     private String getString(Calendar cal, Locale locale){
         return getFormat(locale).format(cal.getTime());
+    }
+
+    private String getString(ThaiBuddhistDate tbd){
+        return getFormat().format(tbd);
     }
 
     public void setHorizontalPadding(){
