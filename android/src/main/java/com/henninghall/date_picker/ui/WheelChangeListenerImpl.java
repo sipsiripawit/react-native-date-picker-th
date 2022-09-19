@@ -42,6 +42,7 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
 
     @Override
     public void onChange(Wheel picker) {
+        SimpleDateFormat dateFormat = uiManager.getDateFormat();
         if(wheels.hasSpinningWheel()) return;
 
         if(!dateExists()){
@@ -53,7 +54,10 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
         }
 
         Calendar selectedDate = getSelectedDate();
+
         if(selectedDate == null) return;
+        else
+            Toast.makeText(rootView.getContext(), "selectedDate : " + dateFormat.format(selectedDate.getTime()), Toast.LENGTH_SHORT).show();
 
         Calendar minDate = state.getMinimumDate();
         if (minDate != null && selectedDate.before(minDate)) {
@@ -69,6 +73,8 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
 
         String displayData = uiManager.getDisplayValueString();
 
+        Toast.makeText(rootView.getContext(), "displayData : " + displayData, Toast.LENGTH_SHORT).show();
+
         uiManager.updateLastSelectedDate(selectedDate);
         Emitter.onDateChange(selectedDate, displayData, rootView);
     }
@@ -80,7 +86,6 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
             String toParse = wheels.getDateTimeString();
             LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat()).minusYears(543);
 
-            Toast.makeText(rootView.getContext(), dateTime.format(getDateTimeFormat()), Toast.LENGTH_SHORT).show();
             dateFormat.setLenient(false); // disallow parsing invalid dates
             dateFormat.parse(dateTime.format(getDateTimeFormat()));
             return true;
