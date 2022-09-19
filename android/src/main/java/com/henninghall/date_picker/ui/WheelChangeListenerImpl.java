@@ -100,8 +100,10 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
         SimpleDateFormat dateFormat = getDateFormat();
         String toParse = wheels.getDateTimeString();
         LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat()).minusYears(543);
+        Toast.makeText(rootView.getContext(), "dateTime : " + dateTime, Toast.LENGTH_SHORT).show();
         Instant instant = dateTime.atZone(ZoneId.systemDefault()).toInstant();
         Date dateInstant = Date.from(instant);
+        Toast.makeText(rootView.getContext(), "dateInstant : " + dateInstant, Toast.LENGTH_SHORT).show();
         Calendar date = Calendar.getInstance();
         date.setTime(dateInstant);
         Toast.makeText(rootView.getContext(), "date : " + date.getTime(), Toast.LENGTH_SHORT).show();
