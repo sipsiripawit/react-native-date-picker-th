@@ -13,6 +13,7 @@ import com.henninghall.date_picker.wheelFunctions.HorizontalPadding;
 import com.henninghall.date_picker.wheels.Wheel;
 
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 public class UIManager {
@@ -66,6 +67,10 @@ public class UIManager {
 
     SimpleDateFormat getDateFormat() {
         return new SimpleDateFormat(wheels.getFormatPattern(), state.getLocale());
+    }
+
+    DateTimeFormatter getDateTimeFormat() {
+        return DateTimeFormatter.ofPattern(wheels.getFormatPattern(), state.getLocale());
     }
 
     String getDisplayValueString() {

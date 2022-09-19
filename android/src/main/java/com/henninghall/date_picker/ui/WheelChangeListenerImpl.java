@@ -9,7 +9,10 @@ import com.henninghall.date_picker.wheels.Wheel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.TimeZone;
 
 public class WheelChangeListenerImpl implements WheelChangeListener {
@@ -31,6 +34,10 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
         SimpleDateFormat dateFormat = uiManager.getDateFormat();
         dateFormat.setTimeZone(timeZone);
         return dateFormat;
+    }
+
+    private DateTimeFormatter getDateTimeFormat(){
+        return uiManager.getDateTimeFormat();
     }
 
     @Override
@@ -68,10 +75,12 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
 
     // Example: Jan 1 returns true, April 31 returns false.
     private boolean dateExists(){
-        SimpleDateFormat dateFormat = getDateFormat();
-        String toParse = wheels.getDateTimeString();
-        Toast.makeText(rootView.getContext(), toParse, Toast.LENGTH_SHORT).show();
         try {
+            SimpleDateFormat dateFormat = getDateFormat();
+            String toParse = wheels.getDateTimeString();
+            LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat());
+
+            Toast.makeText(rootView.getContext(), dateTime.format(getDateTimeFormat()), Toast.LENGTH_SHORT).show();
             dateFormat.setLenient(false); // disallow parsing invalid dates
             dateFormat.parse(toParse);
             return true;
