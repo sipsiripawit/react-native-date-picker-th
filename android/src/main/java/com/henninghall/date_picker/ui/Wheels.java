@@ -143,13 +143,14 @@ public class Wheels {
     }
 
     String getDateTimeString() {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < 3; i++) {
-            if (i != 0) sb.append(" ");
-            Wheel w = getOrderedVisibleWheels().get(i);
-            sb.append(w.getDisplayValue());
-        }
-        return sb.toString();
+        //        StringBuilder sb = new StringBuilder();
+//        for (int i = 0; i < 3; i++) {
+//            if (i != 0) sb.append(" ");
+//            Wheel w = getOrderedVisibleWheels().get(i);
+//            sb.append(w.getDisplayValue());
+//        }
+//        return sb.toString();
+        return getDateTimeString(0);
     }
 
     String getDateString() {

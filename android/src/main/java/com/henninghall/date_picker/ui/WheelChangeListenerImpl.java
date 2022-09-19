@@ -86,6 +86,7 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
         try {
             SimpleDateFormat dateFormat = getDateFormat();
             String toParse = wheels.getDateTimeString();
+        Toast.makeText(rootView.getContext(), "toParse : " + toParse, Toast.LENGTH_SHORT).show();
             LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat()).minusYears(543);
 
             dateFormat.setLenient(false); // disallow parsing invalid dates
