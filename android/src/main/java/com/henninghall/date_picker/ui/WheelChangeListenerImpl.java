@@ -85,7 +85,7 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
     private boolean dateExists(){
         try {
             SimpleDateFormat dateFormat = getDateFormat();
-            String toParse = wheels.getDateTimeString();
+            String toParse = uiManager.getDisplayValueString();
             LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat()).minusYears(543);
 
             dateFormat.setLenient(false); // disallow parsing invalid dates
@@ -98,7 +98,7 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
 
     private Calendar getSelectedDate(){
         SimpleDateFormat dateFormat = getDateFormat();
-        String toParse = wheels.getDateTimeString();
+        String toParse = uiManager.getDisplayValueString();
         LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat()).minusYears(543);
         Toast.makeText(rootView.getContext(), "dateTime : " + dateTime, Toast.LENGTH_SHORT).show();
         Instant instant = dateTime.atZone(ZoneId.systemDefault()).toInstant();
@@ -122,7 +122,7 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
 
         int maxDaysInPastToCheck = 10;
         for (int i = 0; i < maxDaysInPastToCheck; i++){
-            String toParse = wheels.getDateTimeString(i);
+            String toParse = uiManager.getDisplayValueString();
             LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat()).minusYears(543);
             Instant instant = dateTime.atZone(ZoneId.systemDefault()).toInstant();
             Date dateInstant = Date.from(instant);
