@@ -9,7 +9,9 @@ import com.henninghall.date_picker.wheels.Wheel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
@@ -84,7 +86,7 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
         try {
             SimpleDateFormat dateFormat = getDateFormat();
             String toParse = wheels.getDateTimeString();
-            LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat());
+            LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat()).minusYears(543);
 
             dateFormat.setLenient(false); // disallow parsing invalid dates
             dateFormat.parse(dateTime.format(getDateTimeFormat()));
@@ -97,16 +99,16 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
     private Calendar getSelectedDate(){
         SimpleDateFormat dateFormat = getDateFormat();
         String toParse = wheels.getDateTimeString();
-        TimeZone timeZone = state.getTimeZone();
-        Calendar date = Calendar.getInstance(timeZone);
-        try {
-            dateFormat.setLenient(true); // allow parsing invalid dates
-            date.setTime(dateFormat.parse(toParse));
-            return date;
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return null;
+        LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat()).minusYears(543);
+        Instant instant = dateTime.atZone(ZoneId.systemDefault()).toInstant();
+        Date dateInstant = Date.from(instant);
+        Calendar date = Calendar.getInstance();
+        date.setTime(dateInstant);
+//        TimeZone timeZone = state.getTimeZone();
+//        Calendar date = Calendar.getInstance(timeZone);
+        dateFormat.setLenient(true); // allow parsing invalid dates
+//            date.setTime(dateFormat.parse(toParse));
+        return date;
     }
 
     private Calendar getClosestExistingDateInPast(){
