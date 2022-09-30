@@ -9,12 +9,11 @@ import com.henninghall.date_picker.wheels.Wheel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.TimeZone;
 
 public class WheelChangeListenerImpl implements WheelChangeListener {
@@ -44,7 +43,6 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
 
     @Override
     public void onChange(Wheel picker) {
-        SimpleDateFormat dateFormat = uiManager.getDateFormat();
         if(wheels.hasSpinningWheel()) return;
 
         if(!dateExists()){
@@ -56,10 +54,7 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
         }
 
         Calendar selectedDate = getSelectedDate();
-
         if(selectedDate == null) return;
-//        else
-//            Toast.makeText(rootView.getContext(), "selectedDate : " + dateFormat.format(selectedDate.getTime()) + " locale : " + state.getLocale(), Toast.LENGTH_SHORT).show();
 
         Calendar minDate = state.getMinimumDate();
         if (minDate != null && selectedDate.before(minDate)) {
@@ -75,8 +70,6 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
 
         String displayData = uiManager.getDisplayValueString();
 
-//        Toast.makeText(rootView.getContext(), "displayData : " + displayData, Toast.LENGTH_SHORT).show();
-
         uiManager.updateLastSelectedDate(selectedDate);
         Emitter.onDateChange(selectedDate, displayData, rootView);
     }
@@ -86,13 +79,11 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
         try {
             SimpleDateFormat dateFormat = getDateFormat();
             String toParse = wheels.getDateTimeString();
-//            Toast.makeText(rootView.getContext(), "toParse : " + toParse, Toast.LENGTH_SHORT).show();
-            LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat());
-//            Toast.makeText(rootView.getContext(), "dateTime : " + dateTime, Toast.LENGTH_SHORT).show();
-
+//            LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat()).minusYears(543);
+//
+//            Toast.makeText(rootView.getContext(), dateTime.format(getDateTimeFormat()), Toast.LENGTH_SHORT).show();
             dateFormat.setLenient(false); // disallow parsing invalid dates
-            dateFormat.parse(dateTime.format(getDateTimeFormat()));
-//            Toast.makeText(rootView.getContext(), "dateTime.format(getDateTimeFormat()) : " + dateTime.format(getDateTimeFormat()), Toast.LENGTH_SHORT).show();
+            dateFormat.parse(toParse);
             return true;
         } catch (ParseException e) {
             return false;
@@ -102,40 +93,18 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
     private Calendar getSelectedDate(){
         SimpleDateFormat dateFormat = getDateFormat();
         String toParse = wheels.getDateTimeString();
-        LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat());
-        Toast.makeText(rootView.getContext(), "dateTime : " + dateTime, Toast.LENGTH_SHORT).show();
-        Instant instant = dateTime.atZone(ZoneId.systemDefault()).toInstant();
-        Date dateInstant = Date.from(instant);
-        Toast.makeText(rootView.getContext(), "dateInstant : " + dateInstant, Toast.LENGTH_SHORT).show();
-        Calendar date = Calendar.getInstance();
-        date.setTime(dateInstant);
-        Toast.makeText(rootView.getContext(), "date : " + date.getTime(), Toast.LENGTH_SHORT).show();
-//        TimeZone timeZone = state.getTimeZone();
-//        Calendar date = Calendar.getInstance(timeZone);
-        dateFormat.setLenient(true); // allow parsing invalid dates
-//        date.add(Calendar.YEAR, 543);
-//        Toast.makeText(rootView.getContext(), "date add : " + date.getTime(), Toast.LENGTH_SHORT).show();
-//            date.setTime(dateFormat.parse(toParse));
-        return date;
+        Calendar date = Calendar.getInstance(new Locale("th", "TH"));
+        try {
+            dateFormat.setLenient(true); // allow parsing invalid dates
+            date.setTime(dateFormat.parse(toParse));
+            return date;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     private Calendar getClosestExistingDateInPast(){
-//        SimpleDateFormat dateFormat = getDateFormat();
-//        dateFormat.setLenient(false); // disallow parsing invalid dates
-//
-//        int maxDaysInPastToCheck = 10;
-//        for (int i = 0; i < maxDaysInPastToCheck; i++){
-//            String toParse = wheels.getDateTimeString();
-//            Toast.makeText(rootView.getContext(), "toParse : " + toParse, Toast.LENGTH_SHORT).show();
-//            LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat());
-//            Instant instant = dateTime.atZone(ZoneId.systemDefault()).toInstant();
-//            Date dateInstant = Date.from(instant);
-//            Calendar calendar = Calendar.getInstance();
-//            calendar.setTime(dateInstant);
-//            calendar.add(Calendar.YEAR, 543);
-//            return calendar;
-//        }
-//        return null;
         SimpleDateFormat dateFormat = getDateFormat();
         dateFormat.setLenient(false); // disallow parsing invalid dates
 
@@ -143,8 +112,7 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
         for (int i = 0; i < maxDaysInPastToCheck; i++){
             try {
                 String toParse = wheels.getDateTimeString(i);
-        Toast.makeText(rootView.getContext(), "toParse i : " + toParse, Toast.LENGTH_SHORT).show();
-                Calendar calendar = Calendar.getInstance(state.getTimeZone());
+                Calendar calendar = Calendar.getInstance(new Locale("th", "TH"));
                 calendar.setTime(dateFormat.parse(toParse));
                 return calendar;
             } catch (ParseException ignored) {

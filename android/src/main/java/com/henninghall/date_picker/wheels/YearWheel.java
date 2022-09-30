@@ -9,6 +9,7 @@ import com.henninghall.date_picker.models.Mode;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class YearWheel extends Wheel
 {
@@ -24,7 +25,7 @@ public class YearWheel extends Wheel
     @Override
     public ArrayList<String> getValues() {
         ArrayList<String> values = new ArrayList<>();
-        Calendar cal = Calendar.getInstance();
+        Calendar cal = Calendar.getInstance(new Locale("th", "TH"));
 
         final int startYear = getStartYear();
         final int endYear = getEndYear();
