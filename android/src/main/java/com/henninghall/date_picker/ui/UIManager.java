@@ -15,6 +15,7 @@ import com.henninghall.date_picker.wheels.Wheel;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class UIManager {
     private final State state;
@@ -66,11 +67,11 @@ public class UIManager {
     }
 
     SimpleDateFormat getDateFormat() {
-        return new SimpleDateFormat(wheels.getFormatPattern(), state.getLocale());
+        return new SimpleDateFormat(wheels.getFormatPattern(), new Locale("th", "TH"));
     }
 
     DateTimeFormatter getDateTimeFormat() {
-        return DateTimeFormatter.ofPattern(wheels.getFormatPattern(), state.getLocale());
+        return DateTimeFormatter.ofPattern(wheels.getFormatPattern(), new Locale("th", "TH"));
     }
 
     String getDisplayValueString() {

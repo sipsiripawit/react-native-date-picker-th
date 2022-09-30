@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.TimeZone;
 
 public class WheelChangeListenerImpl implements WheelChangeListener {
@@ -78,11 +79,11 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
         try {
             SimpleDateFormat dateFormat = getDateFormat();
             String toParse = wheels.getDateTimeString();
-            LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat()).minusYears(543);
-
-            Toast.makeText(rootView.getContext(), dateTime.format(getDateTimeFormat()), Toast.LENGTH_SHORT).show();
+//            LocalDateTime dateTime = LocalDateTime.parse(toParse, getDateTimeFormat()).minusYears(543);
+//
+//            Toast.makeText(rootView.getContext(), dateTime.format(getDateTimeFormat()), Toast.LENGTH_SHORT).show();
             dateFormat.setLenient(false); // disallow parsing invalid dates
-            dateFormat.parse(dateTime.format(getDateTimeFormat()));
+            dateFormat.parse(toParse);
             return true;
         } catch (ParseException e) {
             return false;
@@ -92,8 +93,7 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
     private Calendar getSelectedDate(){
         SimpleDateFormat dateFormat = getDateFormat();
         String toParse = wheels.getDateTimeString();
-        TimeZone timeZone = state.getTimeZone();
-        Calendar date = Calendar.getInstance(timeZone);
+        Calendar date = Calendar.getInstance(new Locale("th", "TH"));
         try {
             dateFormat.setLenient(true); // allow parsing invalid dates
             date.setTime(dateFormat.parse(toParse));
@@ -112,7 +112,7 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
         for (int i = 0; i < maxDaysInPastToCheck; i++){
             try {
                 String toParse = wheels.getDateTimeString(i);
-                Calendar calendar = Calendar.getInstance(state.getTimeZone());
+                Calendar calendar = Calendar.getInstance(new Locale("th", "TH"));
                 calendar.setTime(dateFormat.parse(toParse));
                 return calendar;
             } catch (ParseException ignored) {
